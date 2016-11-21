@@ -1,0 +1,10 @@
+      <nav>
+        <div class="nav-wrapper">
+          <img src="./app/my-heder/logo.png" class="brand-logo center">
+          <ul class="right hide-on-med-and-down">
+              <li *ngFor="let myHederLink of myHederLinks" class="{{myHederLink.active}}"
+               (click)="changeActive(myHederLink)"><a >{{myHederLink.text}}</a></li>
+            <!--<li class="active"><a href="collapsible.html">JavaScript</a></li>-->
+          </ul>
+        </div>
+      </nav>

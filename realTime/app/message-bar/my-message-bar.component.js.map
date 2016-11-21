@@ -1,0 +1,1 @@
+{"version":3,"file":"my-message-bar.component.js","sourceRoot":"","sources":["my-message-bar.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA0B,eAAe,CAAC,CAAA;AAQ1C;IAAA;IAAqC,CAAC;IANtC;QAAC,gBAAS,CAAC;YACT,QAAQ,EAAE,gBAAgB;YAC1B,WAAW,EAAE,iDAAiD;YAC9D,SAAS,EAAE,CAAE,gDAAgD,CAAE;SAChE,CAAC;;6BAAA;IAEmC,4BAAC;AAAD,CAAC,AAAtC,IAAsC;AAAzB,6BAAqB,wBAAI,CAAA"}
