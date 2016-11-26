@@ -8,21 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
+var core_1 = require('@angular/core');
 var SelectedTabComponent = (function () {
     function SelectedTabComponent() {
     }
     SelectedTabComponent.prototype.ngOnInit = function () {
         this.selected = 'myprofile';
     };
+    SelectedTabComponent = __decorate([
+        core_1.Component({
+            selector: 'selectedtab',
+            template: "\n  <div [ngSwitch]=\"this.selected\" class='row'>\n    <myprofile *ngSwitchCase=\"'myprofile'\" class='col s9 push-s3'></myprofile>\n\n  </div>"
+        }), 
+        __metadata('design:paramtypes', [])
+    ], SelectedTabComponent);
     return SelectedTabComponent;
 }());
-SelectedTabComponent = __decorate([
-    core_1.Component({
-        selector: 'selectedtab',
-        template: "\n  <div [ngSwitch]=\"this.selected\" class='row'>\n    <myprofile *ngSwitchCase=\"'myprofile'\" class='col s9 push-s3'></myprofile>\n\n  </div>"
-    }),
-    __metadata("design:paramtypes", [])
-], SelectedTabComponent);
 exports.SelectedTabComponent = SelectedTabComponent;
 //# sourceMappingURL=selected-tab.component.js.map
