@@ -16,8 +16,10 @@ var my_heder_component_1 = require('./my-heder/my-heder.component');
 var my_contacts_component_1 = require('./contacts/my-contacts.component');
 var profile_card_component_1 = require('./contacts/profile-card.component');
 var my_buttons_component_1 = require('./call-buttons/my-buttons.component');
-var contacts_chat_component_1 = require('./contact-chat/contacts-chat.component');
-var contacts_service_1 = require('./contact-chat/contacts.service');
+//import { ContactChatComponent } from './contact-chat/contacts-chat.component';
+var contacts_service_1 = require('./contacts/contacts.service');
+var selected_tab_component_1 = require('./Tabs/selected-tab.component');
+var my_profile_component_1 = require('./Tabs/my-profile.component');
 //import { AppRace }   from './app.race';
 //import { CarPartsComponent } from './car-parts.component';
 //import { RacingDataService } from './racing-data.service';
@@ -36,13 +38,16 @@ var AppModule = (function () {
                 my_contacts_component_1.MyContactsComponent,
                 profile_card_component_1.ProfileCardComponent,
                 my_buttons_component_1.MyButtonsComponent,
-                contacts_chat_component_1.ContactChatComponent
+                //ContactChatComponent,
+                selected_tab_component_1.SelectedTabComponent,
+                my_profile_component_1.MyProfileComponent
             ],
             bootstrap: [
                 my_heder_component_1.MyHederComponent,
                 my_contacts_component_1.MyContactsComponent,
                 my_buttons_component_1.MyButtonsComponent,
-                contacts_chat_component_1.ContactChatComponent
+                //ContactChatComponent,
+                selected_tab_component_1.SelectedTabComponent
             ],
             providers: [
                 contacts_service_1.ContactService

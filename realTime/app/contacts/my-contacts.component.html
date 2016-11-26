@@ -3,28 +3,21 @@
           <profile-card></profile-card>
           <div class="input-field searchPadding">
             <i class="material-icons prefix">search</i>
-            <input id="icon_prefix" type="text" class="validate">
+            <input id="icon_prefix" type="text" class="validate" [(ngModel)]="this.search">
             <label for="icon_prefix">Search</label>
           </div>
         <li><div class="divider lineColor"></div></li>
         <li><a class="subheader title_color">Contacts</a></li>
-        <li class="collection-item avatar" style="width:100%">
+        <div *ngFor='let contact of contacts'>
+        <li class="collection-item avatar" style="width:100%" [hidden]="isSub(contact.username | lowercase )">
           <div class="valign-wrapper" style="width:100%">
             <img class="circle con-photo" src="./images/profile.jpg">
-            <h6 class="title right-align">Username</h6>
+            <h6 class="title right-align">{{contact.username}}</h6>
             <div class="col s1">
             <span class="new badge right ">4</span>
           </div>
           </div>
         </li>
-        <li class="collection-item avatar" style="width:100%">
-          <div class="valign-wrapper" style="width:100%">
-            <img class="circle con-photo" src="./images/profile.jpg">
-            <h6 class="title right-align">Username</h6>
-            <div class="col s1">
-            <span class="new badge right ">4</span>
-          </div>
-          </div>
-        </li>
+      </div>
       </ul>
 </div>

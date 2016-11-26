@@ -8,19 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var ContactChatComponent = (function () {
-    function ContactChatComponent() {
+var core_1 = require("@angular/core");
+var SelectedTabComponent = (function () {
+    function SelectedTabComponent() {
     }
-    ContactChatComponent = __decorate([
-        core_1.Component({
-            selector: 'chat',
-            templateUrl: './app/contact-chat/contacts-chat.component.html',
-            styleUrls: ['./app/contact-chat/contacts-chat.component.css']
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ContactChatComponent);
-    return ContactChatComponent;
+    SelectedTabComponent.prototype.ngOnInit = function () {
+        this.selected = 'myprofile';
+    };
+    return SelectedTabComponent;
 }());
-exports.ContactChatComponent = ContactChatComponent;
-//# sourceMappingURL=contacts-chat.component.js.map
+SelectedTabComponent = __decorate([
+    core_1.Component({
+        selector: 'selectedtab',
+        template: "\n  <div [ngSwitch]=\"this.selected\" class='row'>\n    <myprofile *ngSwitchCase=\"'myprofile'\" class='col s9 push-s3'></myprofile>\n\n  </div>"
+    }),
+    __metadata("design:paramtypes", [])
+], SelectedTabComponent);
+exports.SelectedTabComponent = SelectedTabComponent;
+//# sourceMappingURL=selected-tab.component.js.map

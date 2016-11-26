@@ -8,8 +8,10 @@ import { MyContactsComponent } from './contacts/my-contacts.component';
 import { ProfileCardComponent } from './contacts/profile-card.component';
 import { MyMessageBarComponent } from './message-bar/my-message-bar.component';
 import { MyButtonsComponent } from './call-buttons/my-buttons.component';
-import { ContactChatComponent } from './contact-chat/contacts-chat.component';
-import { ContactService } from './contact-chat/contacts.service';
+//import { ContactChatComponent } from './contact-chat/contacts-chat.component';
+import { ContactService } from './contacts/contacts.service';
+import { SelectedTabComponent } from './Tabs/selected-tab.component';
+import { MyProfileComponent } from './Tabs/my-profile.component';
 //import { AppRace }   from './app.race';
 //import { CarPartsComponent } from './car-parts.component';
 //import { RacingDataService } from './racing-data.service';
@@ -28,14 +30,17 @@ import { ContactService } from './contact-chat/contacts.service';
      MyContactsComponent,
      ProfileCardComponent,
      MyButtonsComponent,
-     ContactChatComponent
+     //ContactChatComponent,
+     SelectedTabComponent,
+     MyProfileComponent
    ],
    bootstrap:
    [
      MyHederComponent,
      MyContactsComponent,
      MyButtonsComponent,
-     ContactChatComponent
+     //ContactChatComponent,
+     SelectedTabComponent
    ],
    providers:
    [

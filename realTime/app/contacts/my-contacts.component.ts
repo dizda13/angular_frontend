@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { ProfileCardComponent } from './profile-card.component';
+import { ContactService } from './contacts.service';
+import { Contact } from './contact.component'
+
 
 @Component({
   selector: "my-contacts",
@@ -8,5 +11,20 @@ import { ProfileCardComponent } from './profile-card.component';
 })
 
 export class MyContactsComponent {
+  contacts: Contact[];
+  search: string="";
+  constructor(private contactService: ContactService) { }
+
+    ngOnInit(){
+      this.contactService.getContacts()
+                            .subscribe(contacts=> this.contacts=contacts);
+      console.log(this.contacts);
+    }
+
+    isSub(username){
+      if(username.indexOf(this.search.toLowerCase())>=0)
+        return false;
+      return true;
+    }
 
 }

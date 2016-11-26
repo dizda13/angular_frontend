@@ -9,18 +9,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ContactChatComponent = (function () {
-    function ContactChatComponent() {
+var MyProfileComponent = (function () {
+    function MyProfileComponent() {
+        this.name = 'myprofile';
     }
-    ContactChatComponent = __decorate([
+    MyProfileComponent = __decorate([
         core_1.Component({
-            selector: 'chat',
-            templateUrl: './app/contact-chat/contacts-chat.component.html',
-            styleUrls: ['./app/contact-chat/contacts-chat.component.css']
+            selector: 'myprofile',
+            template: '<h1>My Profile</h1>'
         }), 
         __metadata('design:paramtypes', [])
-    ], ContactChatComponent);
-    return ContactChatComponent;
+    ], MyProfileComponent);
+    return MyProfileComponent;
 }());
-exports.ContactChatComponent = ContactChatComponent;
-//# sourceMappingURL=contacts-chat.component.js.map
+exports.MyProfileComponent = MyProfileComponent;
+//# sourceMappingURL=my-profile.component.js.map

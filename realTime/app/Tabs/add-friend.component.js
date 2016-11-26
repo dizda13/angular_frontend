@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ContactChatComponent = (function () {
-    function ContactChatComponent() {
+var AddFriendComponent = (function () {
+    function AddFriendComponent() {
     }
-    ContactChatComponent = __decorate([
+    AddFriendComponent = __decorate([
         core_1.Component({
-            selector: 'chat',
-            templateUrl: './app/contact-chat/contacts-chat.component.html',
-            styleUrls: ['./app/contact-chat/contacts-chat.component.css']
+            selector: 'addfriend',
+            template: '<h1>Add Friend</h1>'
         }), 
         __metadata('design:paramtypes', [])
-    ], ContactChatComponent);
-    return ContactChatComponent;
+    ], AddFriendComponent);
+    return AddFriendComponent;
 }());
-exports.ContactChatComponent = ContactChatComponent;
-//# sourceMappingURL=contacts-chat.component.js.map
+exports.AddFriendComponent = AddFriendComponent;
+//# sourceMappingURL=add-friend.component.js.map
