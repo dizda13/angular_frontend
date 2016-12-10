@@ -15,7 +15,7 @@ var AddFriendComponent = (function () {
     AddFriendComponent = __decorate([
         core_1.Component({
             selector: 'addfriend',
-            template: '<h1>Add Friend</h1>'
+            templateUrl: './app/Tabs/add-friend.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], AddFriendComponent);

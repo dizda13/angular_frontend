@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'addfriend',
-  template: '<h1>Add Friend</h1>'
+  templateUrl: './app/Tabs/add-friend.component.html' 
 })
 
 export class AddFriendComponent {}

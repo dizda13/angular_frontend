@@ -16,7 +16,7 @@ var MyProfileComponent = (function () {
     MyProfileComponent = __decorate([
         core_1.Component({
             selector: 'myprofile',
-            template: '<h1>My Profile</h1>'
+            templateUrl: "./app/Tabs/my-profile.component.html"
         }), 
         __metadata('design:paramtypes', [])
     ], MyProfileComponent);

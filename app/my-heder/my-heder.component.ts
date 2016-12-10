@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MyHederLink } from './my-heder-link.component';
 import { MYHEDERLINKS } from './my-heder.mocks';
+//import { SelectedTabComponent } from '../Tabs/selected-tab.component';
+import { MyProfileComponent } from '../Tabs/my-profile.component';
+import { AddFriendComponent } from '../Tabs/add-friend.component';
+import { AboutComponent } from '../Tabs/about.component';
 
 @Component({
   selector: 'my-heder',
@@ -10,8 +14,13 @@ import { MYHEDERLINKS } from './my-heder.mocks';
 
 export class MyHederComponent {
   myHederLinks: MyHederLink[];
+  selected: string;
+  //constructor(private selectedTabComponent: SelectedTabComponent) { }
+
   ngOnInit(){
     this.myHederLinks=MYHEDERLINKS;
+    MYHEDERLINKS[0].active="active";
+    this.selected='My profile';
   }
 
   changeActive(myHederLink){
@@ -21,5 +30,6 @@ export class MyHederComponent {
       j++;
     }
     MYHEDERLINKS[myHederLink.id].active="active";
+    this.selected=myHederLink.text;
   }
 }

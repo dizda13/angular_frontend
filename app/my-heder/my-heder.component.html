@@ -8,3 +8,8 @@
           </ul>
         </div>
       </nav>
+      <div [(ngSwitch)]="this.selected" class='row'>
+        <myprofile *ngSwitchCase="'My profile'" class='col s9 push-s2'></myprofile>
+        <addfriend *ngSwitchCase="'Add friend'" class='col s9 push-s2'></addfriend>
+        <about *ngSwitchCase="'About'" class='col s9 push-s2'></about>
+      </div>

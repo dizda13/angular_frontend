@@ -18,8 +18,10 @@ var profile_card_component_1 = require('./contacts/profile-card.component');
 var my_buttons_component_1 = require('./call-buttons/my-buttons.component');
 //import { ContactChatComponent } from './contact-chat/contacts-chat.component';
 var contacts_service_1 = require('./contacts/contacts.service');
-var selected_tab_component_1 = require('./Tabs/selected-tab.component');
+//import { SelectedTabComponent } from './Tabs/selected-tab.component';
 var my_profile_component_1 = require('./Tabs/my-profile.component');
+var add_friend_component_1 = require('./Tabs/add-friend.component');
+var about_component_1 = require('./Tabs/about.component');
 //import { AppRace }   from './app.race';
 //import { CarPartsComponent } from './car-parts.component';
 //import { RacingDataService } from './racing-data.service';
@@ -39,18 +41,18 @@ var AppModule = (function () {
                 profile_card_component_1.ProfileCardComponent,
                 my_buttons_component_1.MyButtonsComponent,
                 //ContactChatComponent,
-                selected_tab_component_1.SelectedTabComponent,
-                my_profile_component_1.MyProfileComponent
+                //SelectedTabComponent,
+                my_profile_component_1.MyProfileComponent,
+                add_friend_component_1.AddFriendComponent,
+                about_component_1.AboutComponent
             ],
             bootstrap: [
                 my_heder_component_1.MyHederComponent,
                 my_contacts_component_1.MyContactsComponent,
                 my_buttons_component_1.MyButtonsComponent,
-                //ContactChatComponent,
-                selected_tab_component_1.SelectedTabComponent
             ],
             providers: [
-                contacts_service_1.ContactService
+                contacts_service_1.ContactService,
             ]
         }), 
         __metadata('design:paramtypes', [])

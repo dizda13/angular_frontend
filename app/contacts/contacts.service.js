@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var http_1 = require("@angular/http");
-require("rxjs/add/operator/map");
+var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
+require('rxjs/add/operator/map');
 var ContactService = (function () {
     function ContactService(http) {
         this.http = http;
@@ -18,13 +18,13 @@ var ContactService = (function () {
     ContactService.prototype.getContacts = function () {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" });
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.post('http://realtimetalk.herokuapp.com/rest/search', { search: "a" }, options).map(function (response) { return response.json().data; });
+        return this.http.post('https://realtimetalk.herokuapp.com/rest/search', { search: "a" }, options).map(function (response) { return response.json().data; });
     };
+    ContactService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], ContactService);
     return ContactService;
 }());
-ContactService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http])
-], ContactService);
 exports.ContactService = ContactService;
 //# sourceMappingURL=contacts.service.js.map
