@@ -18,4 +18,10 @@ export const MYHEDERLINKS: MyHederLink[] = [
   "urlLink": "",
   "text": "About",
   "active": "",
+},
+{
+  "id": 3,
+  "urlLink": "",
+  "text": "Logout",
+  "active": "",
 }]

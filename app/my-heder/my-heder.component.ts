@@ -5,6 +5,8 @@ import { MYHEDERLINKS } from './my-heder.mocks';
 import { MyProfileComponent } from '../Tabs/my-profile.component';
 import { AddFriendComponent } from '../Tabs/add-friend.component';
 import { AboutComponent } from '../Tabs/about.component';
+import { LoginService } from '../login/login.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'my-heder',
@@ -15,7 +17,7 @@ import { AboutComponent } from '../Tabs/about.component';
 export class MyHederComponent {
   myHederLinks: MyHederLink[];
   selected: string;
-  //constructor(private selectedTabComponent: SelectedTabComponent) { }
+  constructor(private loginService: LoginService,private router: Router) { }
 
   ngOnInit(){
     this.myHederLinks=MYHEDERLINKS;
@@ -31,5 +33,9 @@ export class MyHederComponent {
     }
     MYHEDERLINKS[myHederLink.id].active="active";
     this.selected=myHederLink.text;
+    if(myHederLink.text=='Logout'){
+      this.loginService.logout();
+      this.router.navigate([' ']);
+    }
   }
 }

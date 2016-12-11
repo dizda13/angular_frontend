@@ -17,5 +17,11 @@ exports.MYHEDERLINKS = [
         "urlLink": "",
         "text": "About",
         "active": "",
+    },
+    {
+        "id": 3,
+        "urlLink": "",
+        "text": "Logout",
+        "active": "",
     }];
 //# sourceMappingURL=my-heder.mocks.js.map

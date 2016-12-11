@@ -3,7 +3,10 @@
           <img src="./app/my-heder/logo.png" class="brand-logo center">
           <ul class="right hide-on-med-and-down">
               <li *ngFor="let myHederLink of myHederLinks" class="{{myHederLink.active}}"
-               (click)="changeActive(myHederLink)"><a >{{myHederLink.text}}</a></li>
+               (click)="changeActive(myHederLink)">
+               <div *ngIf="myHederLink.text=='Logout'" ><a [routerLink]="['/login']" >{{myHederLink.text}}</a></div>
+               <div *ngIf="myHederLink.text!='Logout'" ><a >{{myHederLink.text}}</a></div>
+             </li>
             <!--<li class="active"><a href="collapsible.html">JavaScript</a></li>-->
           </ul>
         </div>
