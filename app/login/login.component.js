@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var login_service_1 = require("./login.service");
-var router_1 = require("@angular/router");
+var core_1 = require('@angular/core');
+var login_service_1 = require('./login.service');
+var router_1 = require('@angular/router');
 var LoginComponent = (function () {
     function LoginComponent(route, router, loginService) {
         this.route = route;
@@ -44,15 +44,15 @@ var LoginComponent = (function () {
         });
         //console.log(this.response.token);
     };
+    LoginComponent = __decorate([
+        core_1.Component({
+            selector: 'login',
+            template: "\n  <div class=\"row \">\n    <form class=\"col s12 centar\">\n      <div class=\"row\">\n        <div class=\"input-field col s4 push-s4\">\n          <input (keyup)=\"onKeyUser($event)\" id=\"username\" type=\"text\" class=\"validate\">\n          <label for=\"username\">Username</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s4 push-s4\">\n          <input (keyup)=\"onKeyPass($event)\" id=\"password\" type=\"password\" class=\"validate\">\n          <label for=\"password\">Password</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s2 push-s4\">\n          <a class=\"waves-effect waves-light btn\" (click)=\"probajLogin()\">Login</a>\n      </div>\n    </div>\n    </form>\n  </div>\n         ",
+            styleUrls: ["./app/login/login.component.css"]
+        }), 
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, login_service_1.LoginService])
+    ], LoginComponent);
     return LoginComponent;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        selector: 'login',
-        template: "\n  <div class=\"row \">\n    <form class=\"col s12 centar\">\n      <div class=\"row\">\n        <div class=\"input-field col s4 push-s4\">\n          <input (keyup)=\"onKeyUser($event)\" id=\"username\" type=\"text\" class=\"validate\">\n          <label for=\"username\">Username</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s4 push-s4\">\n          <input (keyup)=\"onKeyPass($event)\" id=\"password\" type=\"password\" class=\"validate\">\n          <label for=\"password\">Password</label>\n        </div>\n      </div>\n      <div class=\"row\">\n        <div class=\"input-field col s2 push-s4\">\n          <a class=\"waves-effect waves-light btn\" (click)=\"probajLogin()\">Login</a>\n      </div>\n    </div>\n    </form>\n  </div>\n         ",
-        styleUrls: ["./app/login/login.component.css"]
-    }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router, login_service_1.LoginService])
-], LoginComponent);
 exports.LoginComponent = LoginComponent;
 //# sourceMappingURL=login.component.js.map
