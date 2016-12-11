@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import { Router, CanActivate } from '@angular/router';
+
 
 @Component({
   selector: 'my-app',
-  template: '<h1>Hello Angular!</h1>'
+  template: `
+  <router-outlet></router-outlet>
+  `
 })
 
 export class AppComponent { }

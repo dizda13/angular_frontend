@@ -2,7 +2,6 @@ import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AppComponent } from './app.component';
 import { MyHederComponent } from './my-heder/my-heder.component';
 import { MyContactsComponent } from './contacts/my-contacts.component';
 import { ProfileCardComponent } from './contacts/profile-card.component';
@@ -14,9 +13,12 @@ import { ContactService } from './contacts/contacts.service';
 import { MyProfileComponent } from './Tabs/my-profile.component';
 import { AddFriendComponent} from './Tabs/add-friend.component';
 import { AboutComponent } from './Tabs/about.component';
-//import { AppRace }   from './app.race';
-//import { CarPartsComponent } from './car-parts.component';
-//import { RacingDataService } from './racing-data.service';
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { LoginService } from './login/login.service';
+import { routing }        from './app.routing';
+import { AuthGuard } from './auth.guard';
+import { MainPageComponent } from './main-page.component'
 
 
 @NgModule({
@@ -24,7 +26,8 @@ import { AboutComponent } from './Tabs/about.component';
    [
       BrowserModule,
       FormsModule,
-      HttpModule
+      HttpModule,
+      routing
     ],
    declarations:
    [
@@ -36,18 +39,21 @@ import { AboutComponent } from './Tabs/about.component';
      //SelectedTabComponent,
      MyProfileComponent,
      AddFriendComponent,
-     AboutComponent
+     AboutComponent,
+     AppComponent,
+     LoginComponent,
+     MainPageComponent
    ],
    bootstrap:
    [
-     MyHederComponent,
-     MyContactsComponent,
-     MyButtonsComponent,
+     AppComponent
      //ContactChatComponent,
    ],
    providers:
    [
+     AuthGuard,
      ContactService,
+     LoginService
      //SelectedTabComponent
    ]
 })

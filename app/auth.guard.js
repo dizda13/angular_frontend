@@ -9,19 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MyProfileComponent = (function () {
-    function MyProfileComponent() {
-        this.name = 'myprofile';
+var router_1 = require('@angular/router');
+var AuthGuard = (function () {
+    function AuthGuard(router) {
+        this.router = router;
     }
-    MyProfileComponent = __decorate([
-        core_1.Component({
-            selector: 'myprofile',
-            templateUrl: "./app/Tabs/my-profile.component.html",
-            styleUrls: ["./app/Tabs/my-profile.component.css"]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], MyProfileComponent);
-    return MyProfileComponent;
+    AuthGuard.prototype.canActivate = function (route, state) {
+        if (localStorage.getItem('currentUser')) {
+            // logged in so return true
+            return true;
+        }
+        // not logged in so redirect to login page with the return url
+        this.router.navigate(['/login']);
+        return false;
+    };
+    AuthGuard = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [router_1.Router])
+    ], AuthGuard);
+    return AuthGuard;
 }());
-exports.MyProfileComponent = MyProfileComponent;
-//# sourceMappingURL=my-profile.component.js.map
+exports.AuthGuard = AuthGuard;
+//# sourceMappingURL=auth.guard.js.map

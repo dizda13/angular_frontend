@@ -9,19 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var MyProfileComponent = (function () {
-    function MyProfileComponent() {
-        this.name = 'myprofile';
+var MainPageComponent = (function () {
+    function MainPageComponent() {
     }
-    MyProfileComponent = __decorate([
+    MainPageComponent = __decorate([
         core_1.Component({
-            selector: 'myprofile',
-            templateUrl: "./app/Tabs/my-profile.component.html",
-            styleUrls: ["./app/Tabs/my-profile.component.css"]
+            selector: 'main-page',
+            template: "\n    <my-heder>Loading...</my-heder>\n    <my-contacts></my-contacts>\n    <my-buttons></my-buttons>\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], MyProfileComponent);
-    return MyProfileComponent;
+    ], MainPageComponent);
+    return MainPageComponent;
 }());
-exports.MyProfileComponent = MyProfileComponent;
-//# sourceMappingURL=my-profile.component.js.map
+exports.MainPageComponent = MainPageComponent;
+//# sourceMappingURL=main-page.component.js.map

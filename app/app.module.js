@@ -22,9 +22,12 @@ var contacts_service_1 = require('./contacts/contacts.service');
 var my_profile_component_1 = require('./Tabs/my-profile.component');
 var add_friend_component_1 = require('./Tabs/add-friend.component');
 var about_component_1 = require('./Tabs/about.component');
-//import { AppRace }   from './app.race';
-//import { CarPartsComponent } from './car-parts.component';
-//import { RacingDataService } from './racing-data.service';
+var app_component_1 = require('./app.component');
+var login_component_1 = require('./login/login.component');
+var login_service_1 = require('./login/login.service');
+var app_routing_1 = require('./app.routing');
+var auth_guard_1 = require('./auth.guard');
+var main_page_component_1 = require('./main-page.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,7 +36,8 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
-                http_1.HttpModule
+                http_1.HttpModule,
+                app_routing_1.routing
             ],
             declarations: [
                 my_heder_component_1.MyHederComponent,
@@ -44,15 +48,18 @@ var AppModule = (function () {
                 //SelectedTabComponent,
                 my_profile_component_1.MyProfileComponent,
                 add_friend_component_1.AddFriendComponent,
-                about_component_1.AboutComponent
+                about_component_1.AboutComponent,
+                app_component_1.AppComponent,
+                login_component_1.LoginComponent,
+                main_page_component_1.MainPageComponent
             ],
             bootstrap: [
-                my_heder_component_1.MyHederComponent,
-                my_contacts_component_1.MyContactsComponent,
-                my_buttons_component_1.MyButtonsComponent,
+                app_component_1.AppComponent
             ],
             providers: [
+                auth_guard_1.AuthGuard,
                 contacts_service_1.ContactService,
+                login_service_1.LoginService
             ]
         }), 
         __metadata('design:paramtypes', [])

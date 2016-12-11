@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var my_heder_mocks_1 = require("./my-heder.mocks");
+var core_1 = require('@angular/core');
+var my_heder_mocks_1 = require('./my-heder.mocks');
 var MyHederComponent = (function () {
     function MyHederComponent() {
     }
@@ -29,15 +29,15 @@ var MyHederComponent = (function () {
         my_heder_mocks_1.MYHEDERLINKS[myHederLink.id].active = "active";
         this.selected = myHederLink.text;
     };
+    MyHederComponent = __decorate([
+        core_1.Component({
+            selector: 'my-heder',
+            templateUrl: "app/my-heder/my-heder.component.html",
+            styleUrls: ["app/my-heder/my-heder.component.css"]
+        }), 
+        __metadata('design:paramtypes', [])
+    ], MyHederComponent);
     return MyHederComponent;
 }());
-MyHederComponent = __decorate([
-    core_1.Component({
-        selector: 'my-heder',
-        templateUrl: "app/my-heder/my-heder.component.html",
-        styleUrls: ["app/my-heder/my-heder.component.css"]
-    }),
-    __metadata("design:paramtypes", [])
-], MyHederComponent);
 exports.MyHederComponent = MyHederComponent;
 //# sourceMappingURL=my-heder.component.js.map

@@ -1,0 +1,17 @@
+.picture{
+  height: 25%;
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.field{
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.edit{
+  background-color: #80CBC4;
+}
