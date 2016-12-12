@@ -18,7 +18,6 @@ export class MyContactsComponent {
     ngOnInit(){
       this.contactService.getContacts()
                             .subscribe(contacts=> this.contacts=contacts);
-      console.log(this.contacts);
     }
 
     isSub(username){

@@ -11,20 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
-var ContactService = (function () {
-    function ContactService(http) {
+var AddFriendService = (function () {
+    function AddFriendService(http) {
         this.http = http;
     }
-    ContactService.prototype.getContacts = function () {
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" });
+    AddFriendService.prototype.searchFriend = function (search) {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept", "Authorization": JSON.parse(localStorage.getItem('currentUser'))['token'] });
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.post('https://realtimetalk.herokuapp.com/rest/search', { search: "" }, options).map(function (response) { return response.json().data; });
+        return this.http.post('https://realtimetalk.herokuapp.com/rest/search', { search: search }, options).map(function (response) { return response.json().data; });
     };
-    ContactService = __decorate([
+    AddFriendService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], ContactService);
-    return ContactService;
+    ], AddFriendService);
+    return AddFriendService;
 }());
-exports.ContactService = ContactService;
-//# sourceMappingURL=contacts.service.js.map
+exports.AddFriendService = AddFriendService;
+//# sourceMappingURL=add-friend.service.js.map

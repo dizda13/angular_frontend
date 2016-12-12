@@ -1,30 +1,70 @@
 <h1>My Profile</h1>
-<img class="responsive-img" src="./images/profile.jpg" class="circle responsive-img picture">
+
+<div class="row buttonLeft">
+  <button (click)='saveChangesClick()' class="btn waves-effect waves-light col " type="submit" name="action">
+    Save profile changes
+   <i class="material-icons right">mode_edit</i>
+ </button>
+</div>
 
 <div class="row">
+  <img class="responsive-img" src="./images/profile.jpg" class="circle responsive-img picture ">
+  <button (click)='changePhotoClick()' class="btn waves-effect waves-light col centerButton" type="submit" name="action">
+    Change photo
+   </button>
+</div>
+<div class="row">
   <div class="input-field col s6 push-s3">
-    <input value="Alvin" id="first_name2" type="text" class="validate">
+    <input (keyup)="onKey($event,'first_name')" [value]="profile.first_name" id="first_name2" type="text" class="validate">
     <label class="active" for="first_name2">First Name</label>
   </div>
 </div>
 
 <div class="row">
   <div class="input-field col s6 push-s3">
-    <input value="Alvin" id="first_name2" type="text" class="validate">
+    <input (keyup)="onKey($event,'last_name')" [value]="profile.last_name" id="first_name2" type="text" class="validate">
     <label class="active" for="first_name2">Last Name</label>
   </div>
 </div>
 
 <div class="row">
   <div class="input-field col s6 push-s3">
-    <input value="Alvin" id="icon_prefix" type="text" class="validate">
+    <input (keyup)="onKey($event,'email')" [value]="profile.email" id="icon_prefix" type="text" class="validate">
     <label class="active" for="icon_prefix">Email</label>
   </div>
 </div>
 
 <div class="row">
-  <button class="btn waves-effect waves-light col push-s3" type="submit" name="action">
+  <button (click)='editPasswordClick()' class="btn waves-effect waves-light col push-s3" type="submit" name="action">
     Edit password
    <i class="material-icons right">mode_edit</i>
  </button>
+</div>
+<div [hidden]="hiddenEditPassword">
+  <div class="row">
+    <div class="input-field col s6 push-s3">
+      <input (keyup)="onKeyPass($event,'old')"  id="password" type="password" class="validate">
+      <label for="password">Old password</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6 push-s3">
+      <input (keyup)="onKeyPass($event,'new')" id="password" type="password" class="validate">
+      <label for="password">New password</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="input-field col s6 push-s3">
+      <input (keyup)="onKeyPass($event,'repeat')" id="password" type="password" class="validate">
+      <label for="password">Repeat new password</label>
+    </div>
+  </div>
+  <div class="row">
+    <button (click)='changePasswordClick()' class="btn waves-effect waves-light col push-s3" type="submit" name="action">
+      Change password
+     <i class="material-icons right">mode_edit</i>
+   </button>
+  </div>
 </div>

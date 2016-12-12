@@ -12,6 +12,6 @@ export class ContactService{
   getContacts() {
     let headers = new Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('https://realtimetalk.herokuapp.com/rest/search',{ search: "a"}, options).map(response=><Contact[]>response.json().data);
+    return this.http.post('https://realtimetalk.herokuapp.com/rest/search',{ search: ""}, options).map(response=><Contact[]>response.json().data);
   }
 }

@@ -6,29 +6,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'login',
-  template: `
-  <div class="row ">
-    <form class="col s12 centar">
-      <div class="row">
-        <div class="input-field col s4 push-s4">
-          <input (keyup)="onKeyUser($event)" id="username" type="text" class="validate">
-          <label for="username">Username</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s4 push-s4">
-          <input (keyup)="onKeyPass($event)" id="password" type="password" class="validate">
-          <label for="password">Password</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s2 push-s4">
-          <a class="waves-effect waves-light btn" (click)="probajLogin()">Login</a>
-      </div>
-    </div>
-    </form>
-  </div>
-         `,
+  templateUrl: `./app/login/login.component.html`,
   styleUrls: [`./app/login/login.component.css`]
 })
 

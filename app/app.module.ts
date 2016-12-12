@@ -19,6 +19,8 @@ import { LoginService } from './login/login.service';
 import { routing }        from './app.routing';
 import { AuthGuard } from './auth.guard';
 import { MainPageComponent } from './main-page.component'
+import { MyProfileService } from './Tabs/myprofile.service';
+import { AddFriendService } from './Tabs/add-friend.service';
 
 
 @NgModule({
@@ -47,14 +49,14 @@ import { MainPageComponent } from './main-page.component'
    bootstrap:
    [
      AppComponent
-     //ContactChatComponent,
    ],
    providers:
    [
      AuthGuard,
      ContactService,
-     LoginService
-     //SelectedTabComponent
+     LoginService,
+     MyProfileService,
+     AddFriendService
    ]
 })
 

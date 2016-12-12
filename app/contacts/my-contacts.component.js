@@ -19,7 +19,6 @@ var MyContactsComponent = (function () {
         var _this = this;
         this.contactService.getContacts()
             .subscribe(function (contacts) { return _this.contacts = contacts; });
-        console.log(this.contacts);
     };
     MyContactsComponent.prototype.isSub = function (username) {
         if (username.indexOf(this.search.toLowerCase()) >= 0)

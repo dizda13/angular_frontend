@@ -28,6 +28,8 @@ var login_service_1 = require('./login/login.service');
 var app_routing_1 = require('./app.routing');
 var auth_guard_1 = require('./auth.guard');
 var main_page_component_1 = require('./main-page.component');
+var myprofile_service_1 = require('./Tabs/myprofile.service');
+var add_friend_service_1 = require('./Tabs/add-friend.service');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -59,7 +61,9 @@ var AppModule = (function () {
             providers: [
                 auth_guard_1.AuthGuard,
                 contacts_service_1.ContactService,
-                login_service_1.LoginService
+                login_service_1.LoginService,
+                myprofile_service_1.MyProfileService,
+                add_friend_service_1.AddFriendService
             ]
         }), 
         __metadata('design:paramtypes', [])

@@ -1,0 +1,18 @@
+.image{
+  width: 8%;
+  height: 8%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: 2%;
+}
+
+.noPoint{
+  list-style-type: none;
+}
+
+.buttonCss{
+  background-color: #4db6ac;
+  position: absolute;
+  right: 0;
+  margin-right: 1%;
+}
