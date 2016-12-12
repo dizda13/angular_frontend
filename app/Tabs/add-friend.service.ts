@@ -15,4 +15,8 @@ export class AddFriendService{
     return this.http.post('https://realtimetalk.herokuapp.com/rest/search',{ search: search}, options).map(response=><Contact[]>response.json().data);
   }
 
+  addFriend(username: string){
+
+  }
+
 }

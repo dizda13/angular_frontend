@@ -22,6 +22,8 @@ var AddFriendComponent = (function () {
         var _this = this;
         this.addFriendService.searchFriend(search).subscribe(function (response) { return _this.contacts = response; });
     };
+    AddFriendComponent.prototype.addFriend = function (username) {
+    };
     return AddFriendComponent;
 }());
 AddFriendComponent = __decorate([

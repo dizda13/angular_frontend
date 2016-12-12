@@ -20,4 +20,8 @@ export class AddFriendComponent {
   onEnter(search: string){
     this.addFriendService.searchFriend(search).subscribe(response=>this.contacts=response);
   }
+
+  addFriend(username: string){
+
+  }
 }

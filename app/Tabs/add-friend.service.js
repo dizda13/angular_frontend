@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-require('rxjs/add/operator/map');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
 var AddFriendService = (function () {
     function AddFriendService(http) {
         this.http = http;
@@ -20,11 +20,13 @@ var AddFriendService = (function () {
         var options = new http_1.RequestOptions({ headers: headers });
         return this.http.post('https://realtimetalk.herokuapp.com/rest/search', { search: search }, options).map(function (response) { return response.json().data; });
     };
-    AddFriendService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], AddFriendService);
+    AddFriendService.prototype.addFriend = function (username) {
+    };
     return AddFriendService;
 }());
+AddFriendService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], AddFriendService);
 exports.AddFriendService = AddFriendService;
 //# sourceMappingURL=add-friend.service.js.map
