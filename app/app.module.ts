@@ -22,6 +22,9 @@ import { MainPageComponent } from './main-page.component'
 import { MyProfileService } from './Tabs/myprofile.service';
 import { AddFriendService } from './Tabs/add-friend.service';
 import { SharedService } from './contacts/shared.service';
+import { RegisterComponent } from './register/register.component';
+import { RegisterService } from './register/register.service';
+
 //import { Subscription } from 'rxjs/Subscription';
 //import 'rxjs/';
 
@@ -47,7 +50,8 @@ import { SharedService } from './contacts/shared.service';
      AboutComponent,
      AppComponent,
      LoginComponent,
-     MainPageComponent
+     MainPageComponent,
+     RegisterComponent
    ],
    bootstrap:
    [
@@ -62,7 +66,8 @@ import { SharedService } from './contacts/shared.service';
      MyProfileService,
      AddFriendService,
      MyContactsComponent,
-     SharedService
+     SharedService,
+     RegisterService
      //Subscription
    ]
 })

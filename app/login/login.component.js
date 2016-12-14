@@ -34,8 +34,6 @@ var LoginComponent = (function () {
     };
     LoginComponent.prototype.probajLogin = function () {
         var _this = this;
-        console.log(this.username);
-        console.log(this.password);
         this.loginService.getRespons(this.username, this.password)
             .subscribe(function (data) {
             _this.router.navigate([" "]);
@@ -43,6 +41,9 @@ var LoginComponent = (function () {
             _this.loading = false;
         });
         //console.log(this.response.token);
+    };
+    LoginComponent.prototype.register = function () {
+        this.router.navigate(["/register"]);
     };
     LoginComponent = __decorate([
         core_1.Component({

@@ -32,3 +32,8 @@ h1 {
 .container {
   max-width: 900px;
 }
+
+.centriraj{
+  position: absolute;
+  top: 10%;
+}

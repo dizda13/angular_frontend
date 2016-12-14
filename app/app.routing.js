@@ -3,8 +3,10 @@ var router_1 = require('@angular/router');
 var login_component_1 = require('./login/login.component');
 var main_page_component_1 = require('./main-page.component');
 var auth_guard_1 = require('./auth.guard');
+var register_component_1 = require('./register/register.component');
 var appRoutes = [
     { path: 'login', component: login_component_1.LoginComponent },
+    { path: 'register', component: register_component_1.RegisterComponent },
     { path: '', component: main_page_component_1.MainPageComponent, canActivate: [auth_guard_1.AuthGuard] },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

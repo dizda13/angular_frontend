@@ -18,6 +18,7 @@ export class LoginComponent {
   loading: boolean;
 
 constructor(private route: ActivatedRoute, private router: Router, private loginService: LoginService) { }
+
   onKeyUser(event:any){
     this.username = event.target.value;
   }
@@ -36,8 +37,6 @@ constructor(private route: ActivatedRoute, private router: Router, private login
     }
 
   probajLogin(){
-    console.log(this.username);
-    console.log(this.password);
     this.loginService.getRespons(this.username, this.password)
                 .subscribe(data => {
                     this.router.navigate([" "]);
@@ -46,5 +45,9 @@ constructor(private route: ActivatedRoute, private router: Router, private login
                     this.loading = false;
                 });
     //console.log(this.response.token);
+  }
+
+  register(){
+    this.router.navigate(["/register"]);
   }
 }

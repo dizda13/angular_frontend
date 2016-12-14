@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var contacts_service_1 = require("./contacts.service");
-var shared_service_1 = require("./shared.service");
+var core_1 = require('@angular/core');
+var contacts_service_1 = require('./contacts.service');
+var shared_service_1 = require('./shared.service');
 var MyContactsComponent = (function () {
     function MyContactsComponent(contactService, sharedService) {
         var _this = this;
@@ -37,15 +37,15 @@ var MyContactsComponent = (function () {
             return false;
         return true;
     };
+    MyContactsComponent = __decorate([
+        core_1.Component({
+            selector: "my-contacts",
+            templateUrl: './app/contacts/my-contacts.component.html',
+            styleUrls: ['./app/contacts/my-contacts.component.css']
+        }), 
+        __metadata('design:paramtypes', [contacts_service_1.ContactService, shared_service_1.SharedService])
+    ], MyContactsComponent);
     return MyContactsComponent;
 }());
-MyContactsComponent = __decorate([
-    core_1.Component({
-        selector: "my-contacts",
-        templateUrl: './app/contacts/my-contacts.component.html',
-        styleUrls: ['./app/contacts/my-contacts.component.css']
-    }),
-    __metadata("design:paramtypes", [contacts_service_1.ContactService, shared_service_1.SharedService])
-], MyContactsComponent);
 exports.MyContactsComponent = MyContactsComponent;
 //# sourceMappingURL=my-contacts.component.js.map
