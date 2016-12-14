@@ -11,8 +11,8 @@
 <div class="divider teal lighten-2"></div>
   <div class="valign-wrapper" style="width:100%">
     <img class="circle con-photo image" src="./images/profile.jpg">
-    <h4 class="title right-align">{{contact.username}}</h4>
-    <a class="btn-floating btn-large waves-effect waves-light buttonCss"><i class="material-icons">add</i></a>
+    <h4 class="title right-align">{{contact.first_name}} {{contact.last_name}}</h4>
+    <a (click)="addFriend(contact.username)" class="btn-floating btn-large waves-effect waves-light buttonCss"><i class="material-icons">add</i></a>
   </div>
   <div class="divider teal lighten-2"></div>
 </li>

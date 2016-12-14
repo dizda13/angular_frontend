@@ -10,8 +10,8 @@ export class ContactService{
   constructor(private http: Http) { }
 
   getContacts() {
-    let headers = new Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" });
+    let headers = new Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept", "Authorization": JSON.parse(localStorage.getItem('currentUser'))['token'] });
     let options = new RequestOptions({ headers: headers });
-    return this.http.post('https://realtimetalk.herokuapp.com/rest/search',{ search: ""}, options).map(response=><Contact[]>response.json().data);
+    return this.http.get('https://realtimetalk.herokuapp.com/rest/contacts', options).map(response=><Contact[]>response.json().data);
   }
 }

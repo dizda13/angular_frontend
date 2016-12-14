@@ -16,9 +16,9 @@ var ContactService = (function () {
         this.http = http;
     }
     ContactService.prototype.getContacts = function () {
-        var headers = new http_1.Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept" });
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept", "Authorization": JSON.parse(localStorage.getItem('currentUser'))['token'] });
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.post('https://realtimetalk.herokuapp.com/rest/search', { search: "" }, options).map(function (response) { return response.json().data; });
+        return this.http.get('https://realtimetalk.herokuapp.com/rest/contacts', options).map(function (response) { return response.json().data; });
     };
     ContactService = __decorate([
         core_1.Injectable(), 

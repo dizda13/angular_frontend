@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Contact } from '../contacts/contact.component';
 import { AddFriendService } from './add-friend.service';
+import { MyContactsComponent } from '../contacts/my-contacts.component';
+import { SharedService } from '../contacts/shared.service';
+import { ContactService } from '../contacts/contacts.service';
 
 @Component({
   selector: 'addfriend',
@@ -9,9 +12,11 @@ import { AddFriendService } from './add-friend.service';
 })
 
 export class AddFriendComponent {
-  contacts: Contact[];
 
-  constructor(private addFriendService: AddFriendService){}
+  contacts: Contact[];
+  response: string[];
+  constructor(private addFriendService: AddFriendService,private sharedService: SharedService,private contactService: ContactService){}
+
 
   ngOnInit(){
     this.addFriendService.searchFriend("").subscribe(response=>this.contacts=response);
@@ -22,6 +27,10 @@ export class AddFriendComponent {
   }
 
   addFriend(username: string){
+    this.addFriendService.addFriend(username).subscribe((response: string[])=>{
+      response=response;
+      this.contactService.getContacts().subscribe((contacts: Contact[])=>this.sharedService.change(contacts));
+    });
 
   }
 }

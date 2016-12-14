@@ -8,11 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var add_friend_service_1 = require("./add-friend.service");
+var core_1 = require('@angular/core');
+var add_friend_service_1 = require('./add-friend.service');
+var shared_service_1 = require('../contacts/shared.service');
+var contacts_service_1 = require('../contacts/contacts.service');
 var AddFriendComponent = (function () {
-    function AddFriendComponent(addFriendService) {
+    function AddFriendComponent(addFriendService, sharedService, contactService) {
         this.addFriendService = addFriendService;
+        this.sharedService = sharedService;
+        this.contactService = contactService;
     }
     AddFriendComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -23,16 +27,21 @@ var AddFriendComponent = (function () {
         this.addFriendService.searchFriend(search).subscribe(function (response) { return _this.contacts = response; });
     };
     AddFriendComponent.prototype.addFriend = function (username) {
+        var _this = this;
+        this.addFriendService.addFriend(username).subscribe(function (response) {
+            response = response;
+            _this.contactService.getContacts().subscribe(function (contacts) { return _this.sharedService.change(contacts); });
+        });
     };
+    AddFriendComponent = __decorate([
+        core_1.Component({
+            selector: 'addfriend',
+            templateUrl: './app/Tabs/add-friend.component.html',
+            styleUrls: ['./app/Tabs/add-friend.component.css']
+        }), 
+        __metadata('design:paramtypes', [add_friend_service_1.AddFriendService, shared_service_1.SharedService, contacts_service_1.ContactService])
+    ], AddFriendComponent);
     return AddFriendComponent;
 }());
-AddFriendComponent = __decorate([
-    core_1.Component({
-        selector: 'addfriend',
-        templateUrl: './app/Tabs/add-friend.component.html',
-        styleUrls: ['./app/Tabs/add-friend.component.css']
-    }),
-    __metadata("design:paramtypes", [add_friend_service_1.AddFriendService])
-], AddFriendComponent);
 exports.AddFriendComponent = AddFriendComponent;
 //# sourceMappingURL=add-friend.component.js.map

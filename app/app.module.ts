@@ -21,6 +21,9 @@ import { AuthGuard } from './auth.guard';
 import { MainPageComponent } from './main-page.component'
 import { MyProfileService } from './Tabs/myprofile.service';
 import { AddFriendService } from './Tabs/add-friend.service';
+import { SharedService } from './contacts/shared.service';
+//import { Subscription } from 'rxjs/Subscription';
+//import 'rxjs/';
 
 
 @NgModule({
@@ -34,13 +37,13 @@ import { AddFriendService } from './Tabs/add-friend.service';
    declarations:
    [
      MyHederComponent,
+     AddFriendComponent,
      MyContactsComponent,
      ProfileCardComponent,
      MyButtonsComponent,
      //ContactChatComponent,
      //SelectedTabComponent,
      MyProfileComponent,
-     AddFriendComponent,
      AboutComponent,
      AppComponent,
      LoginComponent,
@@ -52,11 +55,15 @@ import { AddFriendService } from './Tabs/add-friend.service';
    ],
    providers:
    [
+     //Subscription,
      AuthGuard,
      ContactService,
      LoginService,
      MyProfileService,
-     AddFriendService
+     AddFriendService,
+     MyContactsComponent,
+     SharedService
+     //Subscription
    ]
 })
 
