@@ -12,7 +12,8 @@
         </div>
       </nav>
       <div [(ngSwitch)]="this.selected" class='row'>
-        <myprofile *ngSwitchCase="'My profile'" class='col s10 push-s2'></myprofile>
-        <addfriend *ngSwitchCase="'Add friend'" class='col s10 push-s2'></addfriend>
-        <about *ngSwitchCase="'About'" class='col s10 push-s2'></about>
+          <myprofile *ngSwitchCase="'My profile'" class='col s10 push-s2'></myprofile>
+          <addfriend *ngSwitchCase="'Add friend'" class='col s10 push-s2'></addfriend>
+          <about *ngSwitchCase="'About'" class='col s10 push-s2'></about>
+          <chat *ngSwitchCase="'Chat'" class='col s10 push-s2'></chat>
       </div>

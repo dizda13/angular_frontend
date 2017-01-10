@@ -1,12 +1,16 @@
 import { Component, Input } from '@angular/core';
 import { MyHederLink } from './my-heder-link.component';
 import { MYHEDERLINKS } from './my-heder.mocks';
+
+
 //import { SelectedTabComponent } from '../Tabs/selected-tab.component';
 import { MyProfileComponent } from '../Tabs/my-profile.component';
 import { AddFriendComponent } from '../Tabs/add-friend.component';
 import { AboutComponent } from '../Tabs/about.component';
 import { LoginService } from '../login/login.service'
 import { Router } from '@angular/router';
+import {Subscription} from "rxjs";
+import {SharedContactsService} from "../contacts/shared-contacts.service";
 
 @Component({
   selector: 'my-heder',
@@ -17,7 +21,12 @@ import { Router } from '@angular/router';
 export class MyHederComponent {
   myHederLinks: MyHederLink[];
   selected: string;
-  constructor(private loginService: LoginService,private router: Router) { }
+  subscription: Subscription;
+  username: String
+  constructor(private loginService: LoginService,private router: Router, private sharedContactsService: SharedContactsService) {
+    this.subscription = this.sharedContactsService.getEmittedValue()
+        .subscribe(item => {this.username=item; this.selected='Chat'});
+  }
 
   ngOnInit(){
     this.myHederLinks=MYHEDERLINKS;

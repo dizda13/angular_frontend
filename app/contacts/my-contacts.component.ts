@@ -7,6 +7,7 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { SharedService } from './shared.service';
 //import 'rxjs';
 import { Subscription } from 'rxjs/Subscription';
+import {SharedContactsService} from "./shared-contacts.service";
 
 @Component({
   selector: "my-contacts",
@@ -21,7 +22,7 @@ export class MyContactsComponent {
   subscription: Subscription;
   search: string="";
 
-  constructor(private contactService: ContactService, private sharedService: SharedService) {
+  constructor(private contactService: ContactService, private sharedService: SharedService,private sharedContactsService: SharedContactsService) {
     this.subscription = this.sharedService.getEmittedValue()
       .subscribe(item => this.contacts=item);
   }
@@ -34,9 +35,12 @@ export class MyContactsComponent {
 
     updateContacts(){
       this.contactService.getContacts().subscribe(contacts=>this.contacts=contacts);
-
     }
 
+    choosen(username: string){
+      console.log(username);
+      this.sharedContactsService.change(username);
+    }
 
     isSub(username){
       //this.contacts.forEach(con=>console.log(con.username));

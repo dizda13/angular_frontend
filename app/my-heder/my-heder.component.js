@@ -12,10 +12,15 @@ var core_1 = require('@angular/core');
 var my_heder_mocks_1 = require('./my-heder.mocks');
 var login_service_1 = require('../login/login.service');
 var router_1 = require('@angular/router');
+var shared_contacts_service_1 = require("../contacts/shared-contacts.service");
 var MyHederComponent = (function () {
-    function MyHederComponent(loginService, router) {
+    function MyHederComponent(loginService, router, sharedContactsService) {
+        var _this = this;
         this.loginService = loginService;
         this.router = router;
+        this.sharedContactsService = sharedContactsService;
+        this.subscription = this.sharedContactsService.getEmittedValue()
+            .subscribe(function (item) { _this.username = item; _this.selected = 'Chat'; });
     }
     MyHederComponent.prototype.ngOnInit = function () {
         this.myHederLinks = my_heder_mocks_1.MYHEDERLINKS;
@@ -42,7 +47,7 @@ var MyHederComponent = (function () {
             templateUrl: "app/my-heder/my-heder.component.html",
             styleUrls: ["app/my-heder/my-heder.component.css"]
         }), 
-        __metadata('design:paramtypes', [login_service_1.LoginService, router_1.Router])
+        __metadata('design:paramtypes', [login_service_1.LoginService, router_1.Router, shared_contacts_service_1.SharedContactsService])
     ], MyHederComponent);
     return MyHederComponent;
 }());

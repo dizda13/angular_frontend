@@ -9,7 +9,7 @@
         <li><div class="divider lineColor"></div></li>
         <li><a class="subheader title_color">Contacts</a></li>
         <div *ngFor='let contact of contacts'>
-        <li class="collection-item avatar" style="width:100%" [hidden]="isSub(contact.username | lowercase )">
+        <li class="collection-item avatar hepek" style="width:100%" [hidden]="isSub(contact.username | lowercase )"  (click)="choosen(contact.username)">
           <div class="valign-wrapper" style="width:100%">
             <img class="circle con-photo" src="./images/profile.jpg">
             <h6 class="title right-align">{{contact.username}}</h6>

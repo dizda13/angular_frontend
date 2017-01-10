@@ -24,6 +24,9 @@ import { AddFriendService } from './Tabs/add-friend.service';
 import { SharedService } from './contacts/shared.service';
 import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register/register.service';
+import { ChatComponent } from './Tabs/chat.component';
+import { SharedContactsService } from './contacts/shared-contacts.service';
+
 
 //import { Subscription } from 'rxjs/Subscription';
 //import 'rxjs/';
@@ -51,7 +54,8 @@ import { RegisterService } from './register/register.service';
      AppComponent,
      LoginComponent,
      MainPageComponent,
-     RegisterComponent
+     RegisterComponent,
+       ChatComponent
    ],
    bootstrap:
    [
@@ -67,7 +71,8 @@ import { RegisterService } from './register/register.service';
      AddFriendService,
      MyContactsComponent,
      SharedService,
-     RegisterService
+     RegisterService,
+       SharedContactsService
      //Subscription
    ]
 })

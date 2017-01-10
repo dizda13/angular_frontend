@@ -11,21 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var http_1 = require('@angular/http');
 require('rxjs/add/operator/map');
-var ContactService = (function () {
-    function ContactService(http) {
+var ChatService = (function () {
+    function ChatService(http) {
         this.http = http;
     }
-    ContactService.prototype.getContacts = function () {
+    ChatService.prototype.getChat = function () {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept", "Authorization": JSON.parse(localStorage.getItem('currentUser'))['token'] });
         var options = new http_1.RequestOptions({ headers: headers });
-        console.log("doslo");
-        return this.http.get('https://realtimetalk.herokuapp.com/rest/contacts', options).map(function (response) { return response.json().data; });
+        return this.http.get('https://realtimetalk.herokuapp.com/rest/chat', options).map(function (response) { return response.json().data; });
     };
-    ContactService = __decorate([
+    ChatService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [http_1.Http])
-    ], ContactService);
-    return ContactService;
+    ], ChatService);
+    return ChatService;
 }());
-exports.ContactService = ContactService;
-//# sourceMappingURL=contacts.service.js.map
+exports.ChatService = ChatService;
+//# sourceMappingURL=chat.service.js.map

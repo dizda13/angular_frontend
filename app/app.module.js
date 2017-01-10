@@ -33,6 +33,8 @@ var add_friend_service_1 = require('./Tabs/add-friend.service');
 var shared_service_1 = require('./contacts/shared.service');
 var register_component_1 = require('./register/register.component');
 var register_service_1 = require('./register/register.service');
+var chat_component_1 = require('./Tabs/chat.component');
+var shared_contacts_service_1 = require('./contacts/shared-contacts.service');
 //import { Subscription } from 'rxjs/Subscription';
 //import 'rxjs/';
 var AppModule = (function () {
@@ -59,7 +61,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 login_component_1.LoginComponent,
                 main_page_component_1.MainPageComponent,
-                register_component_1.RegisterComponent
+                register_component_1.RegisterComponent,
+                chat_component_1.ChatComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent
@@ -73,7 +76,8 @@ var AppModule = (function () {
                 add_friend_service_1.AddFriendService,
                 my_contacts_component_1.MyContactsComponent,
                 shared_service_1.SharedService,
-                register_service_1.RegisterService
+                register_service_1.RegisterService,
+                shared_contacts_service_1.SharedContactsService
             ]
         }), 
         __metadata('design:paramtypes', [])

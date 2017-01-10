@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require("@angular/core");
-var login_service_1 = require("../login/login.service");
-var router_1 = require("@angular/router");
-var register_service_1 = require("./register.service");
-var contact_component_1 = require("../contacts/contact.component");
+var core_1 = require('@angular/core');
+var login_service_1 = require('../login/login.service');
+var router_1 = require('@angular/router');
+var register_service_1 = require('./register.service');
+var contact_component_1 = require('../contacts/contact.component');
 var RegisterComponent = (function () {
     function RegisterComponent(route, router, loginService, registerService) {
         this.route = route;
@@ -58,15 +58,15 @@ var RegisterComponent = (function () {
             _this.router.navigate(["/login"]);
         });
     };
+    RegisterComponent = __decorate([
+        core_1.Component({
+            selector: 'register',
+            templateUrl: '/app/register/register.component.html',
+            styleUrls: ["/app/register/register.component.css"]
+        }), 
+        __metadata('design:paramtypes', [router_1.ActivatedRoute, router_1.Router, login_service_1.LoginService, register_service_1.RegisterService])
+    ], RegisterComponent);
     return RegisterComponent;
 }());
-RegisterComponent = __decorate([
-    core_1.Component({
-        selector: 'register',
-        templateUrl: '/app/register/register.component.html',
-        styleUrls: ["/app/register/register.component.css"]
-    }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute, router_1.Router, login_service_1.LoginService, register_service_1.RegisterService])
-], RegisterComponent);
 exports.RegisterComponent = RegisterComponent;
 //# sourceMappingURL=register.component.js.map
