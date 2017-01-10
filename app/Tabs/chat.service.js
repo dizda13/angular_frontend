@@ -15,10 +15,15 @@ var ChatService = (function () {
     function ChatService(http) {
         this.http = http;
     }
-    ChatService.prototype.getChat = function () {
+    ChatService.prototype.getChat = function (username) {
         var headers = new http_1.Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept", "Authorization": JSON.parse(localStorage.getItem('currentUser'))['token'] });
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get('https://realtimetalk.herokuapp.com/rest/chat', options).map(function (response) { return response.json().data; });
+        return this.http.get('https://realtimetalk.herokuapp.com/rest/chat/' + username, options).map(function (response) { return response.json().data; });
+    };
+    ChatService.prototype.sendMessage = function (message, username) {
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept", "Authorization": JSON.parse(localStorage.getItem('currentUser'))['token'] });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this.http.put('https://realtimetalk.herokuapp.com/rest/chat/' + username, { message: message }, options).map(function (response) { return response.json().data; });
     };
     ChatService = __decorate([
         core_1.Injectable(), 

@@ -26,6 +26,7 @@ import { RegisterComponent } from './register/register.component';
 import { RegisterService } from './register/register.service';
 import { ChatComponent } from './Tabs/chat.component';
 import { SharedContactsService } from './contacts/shared-contacts.service';
+import { ChatService } from './Tabs/chat.service';
 
 
 //import { Subscription } from 'rxjs/Subscription';
@@ -72,7 +73,8 @@ import { SharedContactsService } from './contacts/shared-contacts.service';
      MyContactsComponent,
      SharedService,
      RegisterService,
-       SharedContactsService
+     SharedContactsService,
+     ChatService
      //Subscription
    ]
 })

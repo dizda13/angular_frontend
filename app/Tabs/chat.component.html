@@ -1,12 +1,20 @@
 <h1>{{ this.username }}</h1>
+<ul *ngFor="let chat of chats" class="lista">
+        <li [ngClass]="{'me': this.username!=chat.sender_id, 'friend': this.username==chat.sender_id, 'col s5': true}">
+            <h5> {{ chat.sender_id }} </h5>
+            <h5> {{ chat.message }} </h5>
+        </li>
+</ul>
 <div class="row bottom">
     <form class="col s12">
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+                <textarea id="textarea" class="materialize-textarea"></textarea>
                 <label for="icon_prefix2">Text</label>
             </div>
+            <a (click)="send()" class="waves-effect waves-light btn">SEND</a>
         </div>
+
     </form>
 </div>

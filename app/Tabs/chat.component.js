@@ -10,22 +10,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var shared_contacts_service_1 = require("../contacts/shared-contacts.service");
+var chat_service_1 = require("./chat.service");
 var ChatComponent = (function () {
-    function ChatComponent(sharedContactsService) {
+    function ChatComponent(sharedContactsService, chatService) {
         var _this = this;
         this.sharedContactsService = sharedContactsService;
+        this.chatService = chatService;
         this.search = "";
         this.username = "";
         this.subscription = this.sharedContactsService.getEmittedValue()
-            .subscribe(function (item) { return _this.username = item; });
+            .subscribe(function (item) { _this.username = item; _this.chats = []; chatService.getChat(_this.username).subscribe(function (chats) { return _this.chats = chats; }); });
     }
+    ChatComponent.prototype.send = function () {
+        this.chatService.sendMessage("poruka", this.username).subscribe();
+    };
     ChatComponent = __decorate([
         core_1.Component({
             selector: 'chat',
             templateUrl: './app/Tabs/chat.component.html',
             styleUrls: ['./app/Tabs/chat.component.css']
         }), 
-        __metadata('design:paramtypes', [shared_contacts_service_1.SharedContactsService])
+        __metadata('design:paramtypes', [shared_contacts_service_1.SharedContactsService, chat_service_1.ChatService])
     ], ChatComponent);
     return ChatComponent;
 }());

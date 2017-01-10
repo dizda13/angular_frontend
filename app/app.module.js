@@ -35,6 +35,7 @@ var register_component_1 = require('./register/register.component');
 var register_service_1 = require('./register/register.service');
 var chat_component_1 = require('./Tabs/chat.component');
 var shared_contacts_service_1 = require('./contacts/shared-contacts.service');
+var chat_service_1 = require('./Tabs/chat.service');
 //import { Subscription } from 'rxjs/Subscription';
 //import 'rxjs/';
 var AppModule = (function () {
@@ -77,7 +78,8 @@ var AppModule = (function () {
                 my_contacts_component_1.MyContactsComponent,
                 shared_service_1.SharedService,
                 register_service_1.RegisterService,
-                shared_contacts_service_1.SharedContactsService
+                shared_contacts_service_1.SharedContactsService,
+                chat_service_1.ChatService
             ]
         }), 
         __metadata('design:paramtypes', [])
