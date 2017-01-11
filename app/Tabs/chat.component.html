@@ -10,8 +10,8 @@
         <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">mode_edit</i>
-                <textarea id="textarea" class="materialize-textarea"></textarea>
-                <label for="icon_prefix2">Text</label>
+                <textarea id="textarea" class="materialize-textarea" (keyup)="onKeyPass($event)"></textarea>
+                <label for="textarea">Text</label>
             </div>
             <a (click)="send()" class="waves-effect waves-light btn">SEND</a>
         </div>

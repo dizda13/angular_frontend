@@ -24,7 +24,11 @@ export class ChatComponent {
             .subscribe(item => {this.username=item; this.chats=[];chatService.getChat(this.username).subscribe(chats=>this.chats=chats);});
     }
 
+    onKeyPass(event:any){
+        this.message = event.target.value;
+    }
+
     send(){
-        this.chatService.sendMessage("poruka",this.username).subscribe();
+        this.chatService.sendMessage(this.message,this.username).subscribe();
     }
 }

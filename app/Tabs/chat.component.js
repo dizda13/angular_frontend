@@ -21,8 +21,11 @@ var ChatComponent = (function () {
         this.subscription = this.sharedContactsService.getEmittedValue()
             .subscribe(function (item) { _this.username = item; _this.chats = []; chatService.getChat(_this.username).subscribe(function (chats) { return _this.chats = chats; }); });
     }
+    ChatComponent.prototype.onKeyPass = function (event) {
+        this.message = event.target.value;
+    };
     ChatComponent.prototype.send = function () {
-        this.chatService.sendMessage("poruka", this.username).subscribe();
+        this.chatService.sendMessage(this.message, this.username).subscribe();
     };
     ChatComponent = __decorate([
         core_1.Component({
